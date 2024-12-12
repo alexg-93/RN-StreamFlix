@@ -1,9 +1,6 @@
 import { createSlice, createAsyncThunk,PayloadAction } from '@reduxjs/toolkit';
-import { Movie } from './movieSlice';
+import { FavoriteMoviesState} from '@/types';
 
-interface FavoriteMoviesState {
-    favorites: Movie[];
-  }
 
 const initialState : FavoriteMoviesState = {
   favorites: [],

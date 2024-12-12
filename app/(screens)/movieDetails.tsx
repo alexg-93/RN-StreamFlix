@@ -20,40 +20,15 @@ import DescriptionBox from '@/components/DescriptionBox';
 import List from '@/components/List';
 import AntDesign from '@expo/vector-icons/AntDesign';
 import { addFavoriteMovie, removeFavoriteMovie } from '../redux/slices/favoriteMovieSlice';
+import { IMovieDetails , CastMember , CrewMember} from '@/types';
 
-
-interface CastMember {
-    name: string;
-    profile_path: string;
-  }
-  
-  interface CrewMember {
-    name: string;
-    profile_path: string;
-  }
-  
-  interface Credits {
-    cast: CastMember[];
-    crew: CrewMember[];
-  }
-  
-  interface MovieDetails {
-    original_title: string;
-    backdrop_path: string;
-    release_date: string;
-    runtime: number;
-    genres: { name: string }[];
-    vote_average: number;
-    overview: string;
-    credits: Credits;
-  }
 
 const MovieDetails = () => {
   const dispatch = useDispatch<AppDispatch>();
   const navigation = useNavigation();
   const { movieId } = useLocalSearchParams();
 
-  const movieDetails = useSelector( (state: RootState) => state.movieDetailsReducer.movieDetails as MovieDetails);
+  const movieDetails = useSelector( (state: RootState) => state.movieDetailsReducer.movieDetails as IMovieDetails);
   const isFavorite = useSelector((state: RootState) => state.favoriteMovieReducer.favorites.find((movie) => movie.id.toString() === movieId.toString()));
 
   const cast = movieDetails?.credits?.cast;

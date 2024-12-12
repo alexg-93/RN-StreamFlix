@@ -1,14 +1,7 @@
 import { AUTHORIZATION, BASE_URL } from '@/constants';
 import { createSlice, createAsyncThunk, PayloadAction } from '@reduxjs/toolkit';
+import {SearchState} from '@/types';
 
-
-
-interface SearchState {
-    isLoading : boolean,
-    error: string | null,
-    searchResults: [],
-    searchValue: string
-}
 
 const initialState : SearchState = {
     isLoading: false,

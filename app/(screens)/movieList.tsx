@@ -12,10 +12,9 @@ import { router, useLocalSearchParams, useNavigation } from 'expo-router';
 import {
   fetchPopularMovies,
   fetchUpcomingMovies,
-  Movie,
-  Movies,
   setCurrentPage,
 } from '../redux/slices/movieSlice';
+import { Movie, Movies } from '@/types';
 
 
 const MovieListScreen = () => {

@@ -17,14 +17,8 @@ import {
   fetchUpcomingMovies,
 } from '../redux/slices/movieSlice';
 import { router } from 'expo-router';
+import { MoviesProps } from '@/types';
 
-interface MoviesProps {
-  title: string;
-  moviesData: [];
-  type?: 'popularMovies' | 'trendingMovies' | 'upcomingMovies' | string;
-  displaySeeAll?: boolean;
-  displayAmount?: number;
-}
 
 export default function HomeScreen() {
   const dispatch = useDispatch<AppDispatch>();

@@ -1,15 +1,8 @@
 import { AUTHORIZATION, BASE_URL } from '@/constants';
 import { createSlice, createAsyncThunk, PayloadAction } from '@reduxjs/toolkit';
+import {MovieDetailsState} from '@/types';
 
-interface movieDetailsProps {
-        movieDetails: {
-            credits : {}
-        };
-        isLoading: boolean;
-        isError: boolean | string;
-    }
-
-const initialState: movieDetailsProps = {
+const initialState: MovieDetailsState = {
     movieDetails : {
         credits : {}
     },
